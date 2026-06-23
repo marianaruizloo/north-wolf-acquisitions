@@ -49,7 +49,18 @@
   <input type="text" name="full_name" placeholder="Full Name" required />
   <input type="email" name="email" placeholder="Email Address" required />
   <input type="text" name="phone" placeholder="Phone Number" required />
-  <input type="text" name="strategy" placeholder="Investment Strategy" required />
+  <select name="strategy" required>
+  <option value="">Investment Strategy</option>
+  <option value="Fix & Flip">Fix & Flip</option>
+  <option value="Buy & Hold">Buy & Hold</option>
+  <option value="Rental Properties">Rental Properties</option>
+  <option value="Multifamily">Multifamily</option>
+  <option value="Commercial Real Estate">Commercial Real Estate</option>
+  <option value="Wholesale Deals">Wholesale Deals</option>
+  <option value="Short-Term Rentals">Short-Term Rentals</option>
+  <option value="Land Development">Land Development</option>
+  <option value="Other">Other</option>
+</select>
 
   <input type="hidden" name="_subject" value="New Investor Lead - North Wolf Acquisitions">
   <input type="hidden" name="_next" value="https://north-wolf-acquisitions.vercel.app/investors/investor-thankyou.html">
