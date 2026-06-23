@@ -1,3 +1,4 @@
+alert("INVESTORS JS LOADED");
 const investorForm = document.getElementById("investor-form");
 
 if (investorForm) {
