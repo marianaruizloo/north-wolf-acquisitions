@@ -634,3 +634,15 @@ section {
   color: #666;
   cursor: pointer;
 }
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.form-box select {
+  margin-bottom: 14px;
+}
