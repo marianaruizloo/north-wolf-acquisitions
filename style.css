@@ -618,3 +618,19 @@ section {
     font-size: 1.8rem;
   }
 }
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-box select {
+  background-color: #fff;
+  color: #666;
+  cursor: pointer;
+}
