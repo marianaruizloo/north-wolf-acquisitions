@@ -8,19 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(investorForm);
 
       try {
-        const response = await fetch("https://formspree.io/f/mbdvlqow", {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
+        await fetch(
+          "https://script.google.com/macros/s/AKfycbzpk5zwIY4ybAe9uE4yx2Je1MKU_Y0kky_DxN0lZy4RVb3eWxfGz9hhefnOAQ7rsJUmiQ/exec",
+          {
+            method: "POST",
+            body: formData,
+            mode: "no-cors"
           }
-        });
+        );
 
-        if (response.ok) {
-          window.location.href = "/investors/investor-thankyou.html";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
+        window.location.href = "/investors/investor-thankyou.html";
+
       } catch (error) {
         alert("Network error. Please try again.");
         console.error(error);

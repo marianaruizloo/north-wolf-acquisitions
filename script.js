@@ -66,49 +66,28 @@ faqItems.forEach((item) => {
   });
 });
 
-// =========================
-// FORMSPREE SUBMISSION
-// =========================
-
+// GOOGLE SHEETS SUBMISSION
 const leadForm = document.getElementById("lead-form");
 
 if (leadForm) {
-
   leadForm.addEventListener("submit", async (e) => {
-
     e.preventDefault();
 
     const formData = new FormData(leadForm);
 
     try {
-
-      const response = await fetch("https://formspree.io/f/mwvzkorj", {
+      await fetch("https://script.google.com/macros/s/AKfycbzpk5zwIY4ybAe9uE4yx2Je1MKU_Y0kky_DxN0lZy4RVb3eWxfGz9hhefnOAQ7rsJUmiQ/exec", {
         method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json"
-        }
+        mode: "no-cors",
+        body: formData
       });
 
-      if (response.ok) {
-
-        // Redirect to thank you page
-        window.location.href = "thankyou.html";
-
-      } else {
-
-        alert("Something went wrong. Please try again.");
-
-      }
+   window.location.href = "thankyou.html";
+      leadForm.reset();
 
     } catch (error) {
-
       alert("Network error. Please try again.");
-
       console.error(error);
-
     }
-
   });
-
 }
