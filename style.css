@@ -646,3 +646,19 @@ section {
 .form-box select {
   margin-bottom: 14px;
 }
+.privacy-note {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.privacy-note a {
+  color: #c6a35d;
+  text-decoration: none;
+}
+
+.privacy-note a:hover {
+  text-decoration: underline;
+}
