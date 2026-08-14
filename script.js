@@ -70,24 +70,41 @@ faqItems.forEach((item) => {
 const leadForm = document.getElementById("lead-form");
 
 if (leadForm) {
+
   leadForm.addEventListener("submit", async (e) => {
+
     e.preventDefault();
 
     const formData = new FormData(leadForm);
 
-    try {
-      await fetch("https://script.google.com/macros/s/AKfycbzpk5zwIY4ybAe9uE4yx2Je1MKU_Y0kky_DxN0lZy4RVb3eWxfGz9hhefnOAQ7rsJUmiQ/exec", {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-      });
+    // Check that Cloudflare Turnstile generated a token
+    const turnstileToken = formData.get("cf-turnstile-response");
 
-   window.location.href = "thankyou.html";
-      leadForm.reset();
+    if (!turnstileToken) {
+      alert("Please complete the security verification.");
+      return;
+    }
+
+    try {
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzpk5zwIY4vbAe9uE4yx2Je1MKU_Y0kkv_DxN01Zv4RVb3eWxfGz9hhefnOA07rsJUmj0/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        }
+      );
+
+      window.location.href = "thankyou.html";
 
     } catch (error) {
+
       alert("Network error. Please try again.");
       console.error(error);
+
     }
+
   });
+
 }
