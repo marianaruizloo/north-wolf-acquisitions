@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
 
         await fetch(
-          "https://script.google.com/macros/s/AKfycbzpk5zwIY4vbAe9uE4yx2Je1MKU_Y0kkv_DxN01Zv4RVb3eWxfGz9hhefnOA07rsJUmj0/exec",
+          "https://script.google.com/macros/s/AKfycbzpk5zwIY4ybAe9uE4yx2Je1MKU_Y0kky_DxN0lZy4RVb3eWxfGz9hhefnOAQ7rsJUmiQ/exec",
           {
             method: "POST",
             body: formData,
